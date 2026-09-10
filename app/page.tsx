@@ -13,6 +13,7 @@ import { ExpenseList } from "@/components/ExpenseList";
 import { EmptyExpensesState } from "@/components/EmptyExpensesState";
 import { DashboardSkeleton } from "@/components/Skeleton";
 import { StorageWarning } from "@/components/StorageWarning";
+import { ExportLauncher } from "@/components/export/ExportLauncher";
 import { monthlyTotals, summarize } from "@/lib/analytics";
 import { applyFilters } from "@/lib/filters";
 import { EMPTY_FILTERS } from "@/lib/types";
@@ -38,7 +39,12 @@ export default function DashboardPage() {
         title="Dashboard"
         description="An overview of where your money is going."
         action={
-          expenses.length > 0 ? <Button onClick={openAdd}>Add expense</Button> : undefined
+          expenses.length > 0 ? (
+            <div className="flex gap-2">
+              <ExportLauncher />
+              <Button onClick={openAdd}>Add expense</Button>
+            </div>
+          ) : undefined
         }
       />
 

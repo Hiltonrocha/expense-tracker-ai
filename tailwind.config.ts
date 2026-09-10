@@ -46,11 +46,16 @@ const config: Config = {
           from: { opacity: "0", transform: "scale(0.96)" },
           to: { opacity: "1", transform: "scale(1)" },
         },
+        "drawer-in": {
+          from: { transform: "translateX(100%)" },
+          to: { transform: "translateX(0)" },
+        },
       },
       animation: {
         "toast-in": "toast-in 0.18s ease-out",
         "fade-in": "fade-in 0.15s ease-out",
         "scale-in": "scale-in 0.15s ease-out",
+        "drawer-in": "drawer-in 0.24s cubic-bezier(0.32, 0.72, 0, 1)",
       },
     },
   },
